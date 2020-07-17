@@ -84,7 +84,7 @@ export default function Login(props) {
           </Button>
           <Button
             onPress={() => {
-              //   navigation.navigate('Forgot')
+              navigation.navigate("Forgot");
             }}
           >
             <Text gray caption center style={styles.forgotText}>

@@ -210,10 +210,7 @@ export default function Welcome(props) {
             Login
           </Text>
         </Button>
-        <Button
-          shadow
-          // onPress={() => navigation.navigate("Signup")}
-        >
+        <Button shadow onPress={() => navigation.navigate("SignUp")}>
           <Text center semibold>
             Signup
           </Text>

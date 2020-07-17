@@ -5,8 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Welcome from "../screens/Welcome";
 import Login from "../screens/Login";
-// import Signup from "../screens/Signup";
-// import Forgot from "../screens/Forgot";
+import SignUp from "../screens/SignUp";
+import Forgot from "../screens/Forgot";
 // import Explore from "../screens/Explore";
 // import Browse from "../screens/Browse";
 // import Product from "../screens/Product";
@@ -23,6 +23,28 @@ export default function MyStack() {
         screenOptions={{
           //   headerShown: false,
           cardStyle: { backgroundColor: "white" }, // body color
+
+          headerTitle: null,
+          headerStyle: {
+            height: theme.sizes.base * 4,
+            backgroundColor: theme.colors.white,
+            // borderBottomColor: "transparent",
+            shadowColor: "transparent",
+            elevation: 0, // for android
+          },
+          headerBackImage: () => (
+            <Image source={require("../assets/icons/back.png")} />
+          ),
+          headerLeftContainerStyle: {
+            alignItems: "center",
+            // marginLeft: theme.sizes.base * 2,
+            marginLeft: theme.sizes.base * 1.2,
+            // paddingRight: theme.sizes.base,
+          },
+          headerRightContainerStyle: {
+            alignItems: "center",
+            paddingRight: theme.sizes.base,
+          },
         }}
       >
         <Stack.Screen
@@ -33,30 +55,32 @@ export default function MyStack() {
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{
-            headerTitle: null,
-            headerStyle: {
-              height: theme.sizes.base * 4,
-              backgroundColor: theme.colors.white,
-              // borderBottomColor: "transparent",
-              shadowColor: "transparent",
-              elevation: 0, // for android
-            },
-            headerBackImage: () => (
-              <Image source={require("../assets/icons/back.png")} />
-            ),
-            headerLeftContainerStyle: {
-              alignItems: "center",
-              // marginLeft: theme.sizes.base * 2,
-              marginLeft: theme.sizes.base * 1.2,
-              // paddingRight: theme.sizes.base,
-            },
-            headerRightContainerStyle: {
-              alignItems: "center",
-              paddingRight: theme.sizes.base,
-            },
-          }}
+          // options={{
+          //   headerTitle: null,
+          //   headerStyle: {
+          //     height: theme.sizes.base * 4,
+          //     backgroundColor: theme.colors.white,
+          //     // borderBottomColor: "transparent",
+          //     shadowColor: "transparent",
+          //     elevation: 0, // for android
+          //   },
+          //   headerBackImage: () => (
+          //     <Image source={require("../assets/icons/back.png")} />
+          //   ),
+          //   headerLeftContainerStyle: {
+          //     alignItems: "center",
+          //     // marginLeft: theme.sizes.base * 2,
+          //     marginLeft: theme.sizes.base * 1.2,
+          //     // paddingRight: theme.sizes.base,
+          //   },
+          //   headerRightContainerStyle: {
+          //     alignItems: "center",
+          //     paddingRight: theme.sizes.base,
+          //   },
+          // }}
         />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Forgot" component={Forgot} />
       </Stack.Navigator>
     </NavigationContainer>
   );
