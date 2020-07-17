@@ -21,13 +21,13 @@ const images = [
   require("./assets/images/plants_1.png"),
   require("./assets/images/plants_2.png"),
   require("./assets/images/plants_3.png"),
-  // require("./assets/images/explore_1.png"),
-  // require("./assets/images/explore_2.png"),
-  // require("./assets/images/explore_3.png"),
-  // require("./assets/images/explore_4.png"),
-  // require("./assets/images/explore_5.png"),
-  // require("./assets/images/explore_6.png"),
-  // require("./assets/images/avatar.png"),
+  require("./assets/images/explore_1.png"),
+  require("./assets/images/explore_2.png"),
+  require("./assets/images/explore_3.png"),
+  require("./assets/images/explore_4.png"),
+  require("./assets/images/explore_5.png"),
+  require("./assets/images/explore_6.png"),
+  require("./assets/images/avatar.png"),
 ];
 
 export default function App() {
@@ -54,7 +54,11 @@ export default function App() {
       />
     );
   } else {
-    return <Navigation />;
+    return (
+      // <View style={styles.container}>
+      <Navigation />
+      // </View>
+    );
   }
 }
 
