@@ -40,9 +40,9 @@ export default function Login(props) {
       setErrors(newErrors);
 
       if (!newErrors.length) {
-        //   navigation.navigate("Browse");
+        navigation.navigate("Browse");
       }
-    }, 2000);
+    }, 1000);
   };
 
   const hasErrors = (key) => (errors.includes(key) ? styles.hasErrors : null);
