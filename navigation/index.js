@@ -10,7 +10,7 @@ import Forgot from "../screens/Forgot";
 // import Explore from "../screens/Explore";
 import Browse from "../screens/Browse";
 // import Product from "../screens/Product";
-// import Settings from "../screens/Settings";
+import Settings from "../screens/Settings";
 
 import { theme } from "../constants";
 
@@ -82,6 +82,7 @@ export default function MyStack() {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Forgot" component={Forgot} />
         <Stack.Screen name="Browse" component={Browse} />
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     </NavigationContainer>
   );

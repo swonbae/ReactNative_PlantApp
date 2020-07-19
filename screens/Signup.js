@@ -65,17 +65,18 @@ export default function SignUp(props) {
   const hasErrors = (key) => (errors.includes(key) ? styles.hasErrors : null);
 
   return (
-    <ScrollView>
-      <KeyboardAvoidingView
-        style={styles.signup}
-        // behavior="padding"
-        behavior={Platform.OS === "ios" ? "padding" : null}
-        // keyboardVerticalOffset={Header.HEIGHT + 20}
-      >
-        <Block padding={[0, theme.sizes.base * 2]}>
-          <Text h1 bold>
-            Sign Up
-          </Text>
+    <KeyboardAvoidingView
+      style={styles.signup}
+      // behavior="padding"
+      behavior={Platform.OS === "ios" ? "padding" : null}
+      // keyboardVerticalOffset={Header.HEIGHT + 20}
+    >
+      <Block padding={[0, theme.sizes.base * 2]}>
+        <Text h1 bold>
+          Sign Up
+        </Text>
+
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Block middle>
             <Input
               label="Email"
@@ -119,9 +120,9 @@ export default function SignUp(props) {
               </Text>
             </Button>
           </Block>
-        </Block>
-      </KeyboardAvoidingView>
-    </ScrollView>
+        </ScrollView>
+      </Block>
+    </KeyboardAvoidingView>
   );
 }
 

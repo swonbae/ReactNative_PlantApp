@@ -9,8 +9,8 @@ import {
 import { Button, Block, Text, Input } from "../components";
 import { theme } from "../constants";
 
-const VALID_EMAIL = "contact@react-ui-kit.com";
-const VALID_PASSWORD = "subscribe";
+const VALID_EMAIL = "contact@swonb.tk";
+const VALID_PASSWORD = "password";
 
 export default function Login(props) {
   const [email, setEmail] = useState(VALID_EMAIL);
