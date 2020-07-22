@@ -9,10 +9,12 @@ import SignUp from "../screens/SignUp";
 import Forgot from "../screens/Forgot";
 import Explore from "../screens/Explore";
 import Browse from "../screens/Browse";
-// import Product from "../screens/Product";
+import Product from "../screens/Product";
 import Settings from "../screens/Settings";
 
 import { theme } from "../constants";
+import { Button } from "../components";
+import { Entypo } from "react-native-vector-icons";
 
 const Stack = createStackNavigator();
 
@@ -52,38 +54,26 @@ export default function MyStack() {
           component={Welcome}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          // options={{
-          //   headerTitle: null,
-          //   headerStyle: {
-          //     height: theme.sizes.base * 4,
-          //     backgroundColor: theme.colors.white,
-          //     // borderBottomColor: "transparent",
-          //     shadowColor: "transparent",
-          //     elevation: 0, // for android
-          //   },
-          //   headerBackImage: () => (
-          //     <Image source={require("../assets/icons/back.png")} />
-          //   ),
-          //   headerLeftContainerStyle: {
-          //     alignItems: "center",
-          //     // marginLeft: theme.sizes.base * 2,
-          //     marginLeft: theme.sizes.base * 1.2,
-          //     // paddingRight: theme.sizes.base,
-          //   },
-          //   headerRightContainerStyle: {
-          //     alignItems: "center",
-          //     paddingRight: theme.sizes.base,
-          //   },
-          // }}
-        />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Forgot" component={Forgot} />
         <Stack.Screen name="Browse" component={Browse} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Explore" component={Explore} />
+        <Stack.Screen
+          name="Product"
+          component={Product}
+          options={{
+            headerRight: () => (
+              <Button onPress={() => {}}>
+                <Entypo
+                  name="dots-three-horizontal"
+                  color={theme.colors.gray}
+                />
+              </Button>
+            ),
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

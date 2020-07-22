@@ -42,7 +42,7 @@ export default function Login(props) {
       if (!newErrors.length) {
         navigation.navigate("Browse");
       }
-    }, 1000);
+    }, 500);
   };
 
   const hasErrors = (key) => (errors.includes(key) ? styles.hasErrors : null);
