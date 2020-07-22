@@ -31,6 +31,8 @@ const images = [
 ];
 
 export default function App() {
+  console.disableYellowBox = true;
+
   const [isLoading, setIsLoading] = useState(true);
 
   handleResourceAsync = async () => {

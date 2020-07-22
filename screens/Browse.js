@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
 
 import { Button, Block, Text, Card, Badge } from "../components";
@@ -10,6 +10,23 @@ export default function Browse(props) {
   const tabs = ["Products", "Inspirations", "Shop"];
 
   const [active, setActive] = useState("Products");
+  const [selectedCategory, setSelectedCategory] = useState([]);
+
+  useEffect(() => {
+    setSelectedCategory(getFilteredCategory(active));
+  }, [categories]);
+
+  const getFilteredCategory = (tab) => {
+    // console.log(tab);
+    return categories.filter((category) =>
+      category.tags.includes(tab.toLowerCase())
+    );
+  };
+
+  const handleTab = (tab) => {
+    setActive(tab);
+    setSelectedCategory(getFilteredCategory(tab));
+  };
 
   const renderTab = (tab) => {
     const isActive = active === tab;
@@ -18,7 +35,8 @@ export default function Browse(props) {
       <TouchableOpacity
         key={`tab-${tab}`}
         onPress={() => {
-          setActive(tab);
+          // setActive(tab);
+          handleTab(tab);
         }}
         style={[styles.tab, isActive ? styles.active : null]}
       >
@@ -48,7 +66,7 @@ export default function Browse(props) {
       </Block>
       <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll}>
         <Block flex={false} row space="between" style={styles.categories}>
-          {categories.map((category) => (
+          {selectedCategory.map((category) => (
             <TouchableOpacity
               key={category.name}
               onPress={() => {
